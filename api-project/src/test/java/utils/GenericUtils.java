@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class GenericUtils {
+	//Updating Utils
 	public static String getPropertyValue(String fileName, String key)
 	{
 		String urlVal=null;
