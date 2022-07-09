@@ -15,7 +15,7 @@ Background: Token Generation
   Scenario: GET List of organization private repositories
     Given path param "orgName" with value "RestAPITestingApril2022"
     And query param "type" with value "private"
-    And header "Authorization" with value "Bearer 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"
+    And header "Authorization" with value "Bearer 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"
     When GET request is exectuted with "orgs/{orgName}/repos"
     Then verify status code is 200
 
@@ -24,7 +24,7 @@ Background: Token Generation
     Given path param "orgName" with value "RestAPITestingApril2022"
     And query param "type" with value "private"
     And query param "per_page" with value 1
-    And header "Authorization" with value "Bearer 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"
+    And header "Authorization" with value "Bearer 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"
     When GET request is exectuted with "orgs/{orgName}/repos"
     Then verify status code is 200
     And verify response body count is 2
@@ -34,7 +34,7 @@ Background: Token Generation
     Given path param "orgName" with value "RestAPITestingApril2022"
     And query param "type" with value "private"
     And query param "per_page" with value 1
-    And header "Authorization" with value "Bearer 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"
+    And header "Authorization" with value "Bearer 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"
     When GET request is exectuted with "orgs/{orgName}/repos"
     Then verify status code is 200
 
@@ -49,5 +49,5 @@ Background: Token Generation
       | orgname                 | auth                                            | type    | statuscode |
       | RestAPITestingApril2022 |                                                 |         |        200 |
       | aasdfasdasdf            |                                                 |         |        404 |
-      | RestAPITestingApril2022 | Bearer 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 | private |        200 |
+      | RestAPITestingApril2022 | Bearer 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 | private |        200 |
       | RestAPITestingApril2022 |                                                 | private |        200 |
