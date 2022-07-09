@@ -4,7 +4,7 @@ Feature: Create organization repository
 
   Scenario: Create repository with valid org,token,name
     Given path param "orgName" with value "RestAPITestingApril2022"
-    And header "Authorization" with value "Bearer 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"
+    And header "Authorization" with value "Bearer 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"
     And input json body for create repo key "name" with value "repo_july_13_03"
     When POST request is exectuted with "https://api.github.com/orgs/{orgName}/repos"
     Then verify status code is 201
@@ -13,7 +13,7 @@ Feature: Create organization repository
   @smoke
   Scenario: Create repository with valid org,token,name and verify deserialization
     Given path param "orgName" with value "RestAPITestingApril2022"
-    And header "Authorization" with value "Bearer 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"
+    And header "Authorization" with value "Bearer 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"
     And input json body for create repo with "repo_july_13_03","false","Repo with deserialization"
     When POST request is exectuted with "https://api.github.com/orgs/{orgName}/repos"
     Then verify status code is 201
@@ -29,8 +29,8 @@ Feature: Create organization repository
 
     Examples: 
       | orgname                 | auth                                            | repo_name       | private | description          | status_code |
-      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    |                      |         201 |
+      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    |                      |         201 |
       | RestAPITestingApril2022 | Bearer ghp_9999999                              | repo_july_13_03 | true    | repo from automation |         401 |
-      | RestAPI3333333333332022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         404 |
-      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         422 |
-      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         403 |
+      | RestAPI3333333333332022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         404 |
+      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         422 |
+      | RestAPITestingApril2022 | Bearer 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 | repo_july_13_03 | true    | repo from automation |         403 |
